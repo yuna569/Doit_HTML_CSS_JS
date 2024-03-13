@@ -14,6 +14,15 @@
       border-radius:50%;      
       box-shadow: 5px 5px 30px 2px #000;
     }
+	#container img:hover {
+		animation-duration: 5s;
+		animation-name: rotate;
+	}
+	@keyframes rotate {
+		from { transform: rotateY('0deg') perspective('200px'); }
+		50% { transform: rotateY('180deg') perspective('200px'); }
+		to { transform: rotateY('360deg') perspective('200px'); }
+	}
 	</style>
 </head>
 
