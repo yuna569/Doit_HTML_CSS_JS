@@ -7,6 +7,18 @@
 </head>
 <body>
   <h1>자리 배치도</h1>
+  <script>
+    var people = prompt("입장객 수");
+    var column = prompt("한 줄 인원 수");
+    var row = people / column;
+
+    if (people%column != 0) {
+      row = parseInt(row);
+      row += 1;
+    }
+
+    document.write("필요한 줄의 수: " + row);
+  </script>
     
 </body>
 </html>

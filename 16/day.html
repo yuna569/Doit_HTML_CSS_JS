@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+9<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -24,6 +24,18 @@
     }
   </style>
 </head>
+<script>
+  var today = new Date("2024-03-16");
+  var firstDay = new Date("2024-01-29");
+  
+  var toNow = today.getTime();
+  var toStart = firstDay.getTime();
+  var passedTime = toNow - toStart;
+
+  passedTime = Math.round(passedTime/(1000*60*60*24));
+
+  document.querySelector('#result').innerText = passedTime;
+</script>
 <body>
   <div id="container">
     <h1>책 읽기</h1>
