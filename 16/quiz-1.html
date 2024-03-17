@@ -20,7 +20,33 @@
 <body>
   <p>현재 시각 <span id="current" class="display"></span></p>
   <script>
-    // 16\sol-1.html 소스 참고    
+    setInterval(displayNow, 1000);
+
+    function displayNow() {
+      let now = new Date();
+      let hour = now.getHours();
+      let currentTime;
+      if (hour % 12 == 0) {
+        if( hour == 0 ) {
+          hour = 12;
+          currentTime = "오전 " + hour + ":" + now.getMinutes() + ":" + now.getSeconds();
+        }
+        else {
+          currentTime = "오후 " + hour + ":" + now.getMinutes() + ":" + now.getSeconds();
+        }
+      }
+      else {
+        if( hour < 12 ) {
+          currentTime = "오전 " + hour + ":" + now.getMinutes() + ":" + now.getSeconds();
+        }
+        else {
+          hour -= 12;
+          currentTime = "오후 " + hour + ":" + now.getMinutes() + ":" + now.getSeconds();
+        }
+      }
+      
+      document.querySelector('#current').innerHTML = currentTime;
+    }
   </script>
 </body>
 </html>
