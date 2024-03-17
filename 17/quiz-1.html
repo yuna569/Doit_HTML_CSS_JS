@@ -13,7 +13,7 @@
 			line-height: 35px;
 		}
 		.check {			
-			color:#ccc;
+			color:#999;
 			font-size:20px;
 			margin-right:25px;
 		}
@@ -31,5 +31,17 @@
 		<li><span class="check">&check;</span>할 일 4 </li>
 		<li><span class="check">&check;</span>할 일 5 </li>
 	</ul>
+	<script>
+		var check = document.getElementsByClassName("check");
+
+		for (let i = 0 ; i < check.length ; i++){
+			check[i].onclick = function() {
+				let par = this.parentNode;
+				this.style.color = "#ccc";
+				par.style.color = "#ccc";
+				par.style.textDecoration = "line-through";
+			};
+		}
+	</script>
 </body>
 </html>

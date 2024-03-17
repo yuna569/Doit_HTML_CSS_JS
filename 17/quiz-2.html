@@ -4,8 +4,36 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>연습문제 2</title>
+	
 </head>
 <body>
-	
+	<form>
+		<input type="text" maxlength="1" id="row">행
+		<input type="text" maxlength="1" id="column">열
+		<button>작성</button>
+	</form>
+	<div id="contents"></div>
+	<script>
+		document.querySelector("button").onclick = function() {
+			var r = document.querySelector("#row").value;
+			var c = document.querySelector("#column").value;
+
+			var tab = document.createElement("table");
+
+			for ( let i = 0; i < r; i++ ) {
+				var ri = document.createElement("tr");
+				for ( let j = 0 ; j < c ; j++ ) {
+					var ci = document.createElement("td");
+					var t = document.createTextNode(i + ", " + j);
+
+					ci.appendChild(t);
+					ri.appendChild(ci);
+				}
+				tab.appendChild(ri);
+			}
+			document.querySelector("#contents").appendChild(tab);
+			return false;
+		}
+	</script>
 </body>
 </html>
